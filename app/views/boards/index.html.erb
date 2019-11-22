@@ -1,4 +1,11 @@
-<h1>Boards</h1>
+<h1>Board</h1>
 <%= link_to 'Add board', new_board_path %>
 <hr />
-
+<h2><%= @boards.length <= 0 ? "No Board" : "" %></h2> 
+<ul>
+  <% @boards.each do |board| %>
+    <li>
+      <%= link_to board.name, board %>
+    </li>
+  <% end %>
+</ul>

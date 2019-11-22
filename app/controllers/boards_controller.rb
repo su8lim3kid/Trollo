@@ -16,7 +16,7 @@ before_action :set_board, only: [:show, :destroy]
     @board = Board.new(board_params)
     
     if @board.save
-      redirect_to board_path
+      redirect_to boards_path
     else
       render :new
     end
@@ -24,7 +24,7 @@ before_action :set_board, only: [:show, :destroy]
 
   def destroy
     @board.destroy
-    redirect_to boards_path
+    redirect_to board_path
   end
 
   private
