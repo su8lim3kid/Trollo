@@ -24,7 +24,7 @@ before_action :set_board, only: [:show, :destroy]
 
   def destroy
     @board.destroy
-    redirect_to board_path
+    redirect_to boards_path
   end
 
   private
