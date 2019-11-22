@@ -1,0 +1,14 @@
+<h1><%= @board.full_name %></h1>
+<hr />
+<h2>Boards</h2>
+<ul>
+  <% @board.tasks.each do |task| %>
+    <li>
+      <%= link_to task.name, task %>
+    </li>
+  <% end %>
+</ul>
+<br />
+<br />
+<br />
+<%= link_to 'Delete board', @board, method: :delete, class: "ui red button inverted" %>
