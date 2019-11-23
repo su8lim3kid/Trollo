@@ -1,6 +1,8 @@
 <h1><%= @task.name %></h1>
 <hr />
-
-
 <br />
-<%= link_to 'Delete task', @task, method: :delete %>
+<%= link_to 'List', task_lists_path(@task), class: "ui primary button inverted" %>
+<br />
+<br />
+<br />
+<%= link_to "Delete task", @task, method: :delete, class: "ui red button inverted" %>

@@ -2,12 +2,11 @@ class ListsController < ApplicationController
     before_action :set_task
   
     def index
-      @teachers = @task.lists.where(role: 'teacher')
-      @tas = @task.lists.where(role: 'ta')
-      @students = @task.lists.where(role: 'student')
+    @list = List.all
     end
   
     def new
+      @board = Board.all - @task.boards
       @list = @task.lists.new
     end
   
@@ -28,10 +27,10 @@ class ListsController < ApplicationController
   
    private
      def set_task
-       @task = task.find(params[:task_id]) 
+       @task = Task.find(params[:task_id]) 
      end
   
      def list_params
-       params.require(:list).permit(:role, :user_id)
+       params.require(:list).permit(:name)
      end
   end

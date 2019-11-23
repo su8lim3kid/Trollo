@@ -1,2 +1,4 @@
-<h1>Lists#index</h1>
-<p>Find me in app/views/lists/index.html.erb</p>
+<h1><%= @task.name %>: Lists</h1>
+<%= link_to 'Add List', new_task_list_path(@task) %>
+<hr />
+

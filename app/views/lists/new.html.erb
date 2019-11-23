@@ -1,2 +1,7 @@
-<h1>Lists#new</h1>
-<p>Find me in app/views/lists/new.html.erb</p>
+<h1>Add List</h1>
+<%= form_with(model: [@task, @list], local: true, class: "ui form" ) do |f| %>
+    <br />
+    <%= f.label :name %>
+    <%= f.text_area :name %>
+  <%= f.submit nil, class: "ui green button inverted" %>
+<% end %>
